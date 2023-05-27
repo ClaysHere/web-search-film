@@ -42,6 +42,7 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <h1>My Movie Mania</h1>
+        <h1>Testing</h1>
         <input
           placeholder="Search Film"
           className="Movie-search"
@@ -54,5 +55,5 @@ const App = () => {
     </div>
   );
 };
-
+// git add <file>
 export default App;
