@@ -56,7 +56,7 @@ const App = () => {
           My Movie Mania
         </h1>
         <h1 className={"text-xl font-bold text-slate-200"}>Testing</h1>
-        <div className="w-full flex justify-center gap-2 px-8">
+        <div className="w-full flex-col items-center lg:flex-row flex justify-center gap-2 px-4 lg:px-8">
           <input
             placeholder="Search Film"
             className={"lg:w-1/2 p-4 text-xl rounded-xl"}
@@ -65,7 +65,7 @@ const App = () => {
           />
           <button
             onClick={() => search(searchRef.current.value)}
-            className="bg-teal-300 px-4 lg:px-8 rounded-2xl text-slate-700 font-bold lg:text-xl hover:bg-teal-600 hover:text-slate-300 active:bg-slate-600">
+            className="bg-teal-300 w-1/2 lg:w-[150px] py-4 lg:py-0 lg:px-8 rounded-2xl text-slate-700 font-bold lg:text-xl hover:bg-teal-600 hover:text-slate-300 active:bg-slate-600">
             Search
           </button>
         </div>
