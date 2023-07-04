@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import "./App.css";
+import { useEffect, useRef, useState } from "react";
+// import "./App.css";
 import { getMovieList, searchMovie } from "./api";
 
 const App = () => {
@@ -14,18 +14,24 @@ const App = () => {
   const PopularMoviesList = () => {
     return popularMovies.map((movie, i) => {
       return (
-        <div className="Movie-wrapper" key={i}>
-          <div className="Movie-title">{movie.title}</div>
+        <div
+          className="w-1/4 flex flex-col items-center p-8 bg-slate-400 text-slate-800 font-semibold gap-y-4 rounded-xl"
+          key={i}>
+          <div className="h-[50px] text-center">{movie.title}</div>
           <img
-            className="Movie-image"
+            className="w-[350px] h-[500px] rounded-lg"
             src={`${process.env.REACT_APP_BASEIMGURL}/${movie.poster_path}`}
+            alt="gambar"
           />
           <div className="Movie-date">Release : {movie.release_date}</div>
           <div className="Movie-rate">Rating : {movie.vote_average}</div>
+          <div>{movie.overview}</div>
         </div>
       );
     });
   };
+
+  console.log(popularMovies);
 
   const search = async (q) => {
     if (q.length > 3) {
@@ -38,17 +44,32 @@ const App = () => {
     }
   };
 
+  const searchRef = useRef();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>My Movie Mania</h1>
-        <h1>Testing</h1>
-        <input
-          placeholder="Search Film"
-          className="Movie-search"
-          onChange={({ target }) => search(target.value)}
-        />
-        <div className="Movie-container">
+      <header className={"w-full flex flex-col items-center gap-8 p-16"}>
+        <h1
+          className={
+            "text-6xl font-bold font-sans text-white bg-slate-500 p-4 rounded-lg"
+          }>
+          My Movie Mania
+        </h1>
+        <h1 className={"text-xl font-bold text-slate-200"}>Testing</h1>
+        <div className="w-full flex justify-center gap-4">
+          <input
+            placeholder="Search Film"
+            className={"w-1/2 p-4 text-xl rounded-xl"}
+            // onChange={({ target }) => search(target.value)}
+            ref={searchRef}
+          />
+          <button
+            onClick={() => search(searchRef.current.value)}
+            className="bg-teal-300 px-8 rounded-2xl text-slate-700 font-bold text-xl hover:bg-teal-600 hover:text-slate-300 active:bg-slate-600">
+            Search
+          </button>
+        </div>
+        <div className="w-full flex flex-wrap gap-16 justify-center">
           <PopularMoviesList />
         </div>
       </header>
@@ -56,4 +77,14 @@ const App = () => {
   );
 };
 // git add <file>
+// git commit -m "jelasin apa yg kau ubah (conventional commit
+// git push
+
+// git branch <nama branch>
+// git checkout <nama branch>
+// git checkout -b <nama branch>
+
+// git checkout <branch tujuan>
+// git diff <nama branch tujuan> <nama branch asal>
+// git merge <branch yg mau di merge>
 export default App;
