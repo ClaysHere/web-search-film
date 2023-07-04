@@ -56,7 +56,7 @@ const App = () => {
           My Movie Mania
         </h1>
         <h1 className={"text-xl font-bold text-slate-200"}>Testing</h1>
-        <div className="w-full flex justify-center gap-4">
+        <div className="w-full flex justify-center gap-2 px-8">
           <input
             placeholder="Search Film"
             className={"lg:w-1/2 p-4 text-xl rounded-xl"}
