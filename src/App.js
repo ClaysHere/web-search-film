@@ -65,7 +65,7 @@ const App = () => {
           />
           <button
             onClick={() => search(searchRef.current.value)}
-            className="bg-teal-300 w-1/2 lg:w-[150px] py-4 lg:py-0 lg:px-8 rounded-2xl text-slate-700 font-bold lg:text-xl hover:bg-teal-600 hover:text-slate-300 active:bg-slate-600">
+            className="bg-teal-300 w-1/2 lg:w-[150px] py-4 lg:px-8 rounded-2xl text-slate-700 font-bold lg:text-xl hover:bg-teal-600 hover:text-slate-300 active:bg-slate-600">
             Search
           </button>
         </div>
